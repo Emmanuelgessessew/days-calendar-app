@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Days Calendar Project</title>
+
+  <!-- ✅ SEO and Accessibility Improvements -->
+  <meta name="description" content="A dynamic calendar that displays commemorative days with descriptions and accessibility support." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="http://localhost/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ JavaScript module -->
+  <script type="module" src="web.mjs"></script>
+</head>
+<body>
+  <header>
+    <h1 id="calendarHeading">Days Calendar</h1>
+  </header>
+
+  <main>
+    <!-- Month navigation -->
+    <nav aria-label="Calendar navigation">
+      <button id="prev-month" aria-label="Go to previous month">Previous Month</button>
+      <button id="next-month" aria-label="Go to next month">Next Month</button>
+    </nav>
+
+    <!-- Jumps to specific month/year -->
+    <section aria-label="Month and year selection">
+      <label for="month-select">Month:</label>
+      <select id="month-select" name="month"></select>
+
+      <label for="year-select">Year:</label>
+      <select id="year-select" name="year"></select>
+    </section>
+
+    <!-- Calendar container with ARIA -->
+    <section id="calendar-container" role="region" aria-labelledby="calendarHeading">
+      <!-- Calendar grid will be injected here -->
+    </section>
+
+    <div id="event-description" hidden></div>
+  </main>
+
+  <!-- Accessible modal -->
+  <dialog 
+    id="descriptionModal" 
+    role="dialog" 
+    aria-modal="true"
+    aria-labelledby="modalTitle" 
+    aria-describedby="modalText">
+    <h2 id="modalTitle">Modal title</h2>
+    <p id="modalText">Modal text</p>
+    <button id="modalClose" aria-label="Close description modal">Close</button>
+  </dialog>
+</body>
+</html>
